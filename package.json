@@ -1,8 +1,8 @@
 {
   "name": "des-gitstore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "des-soft git utils",
-  "main": "src/index.js",
+  "main": "src/Gitstore.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
