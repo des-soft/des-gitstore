@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/des-soft/packer#readme",
   "dependencies": {
+    "rimraf-then": "^1.0.1",
     "simple-git": "^1.92.0",
     "then-fs": "^2.0.0"
   }

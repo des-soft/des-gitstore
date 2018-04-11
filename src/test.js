@@ -3,8 +3,11 @@ const path = require('path')
 // git_base, git_uri
 
 let d = new Gitstore(
-    '/Users/eczn/Desktop/code/des-soft/md.daily',
-    'https://github.com/des-soft/md.daily.git'
+    'F:/www/des-soft/just-for-test',
+    'https://git.coding.net/eczn/test.git'
 ); 
 
-d.checkIsRepo(); 
+d.pull().then(
+    console.log, 
+    console.log
+)
