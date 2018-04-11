@@ -27,6 +27,7 @@ module.exports = class Gitstore extends EventEmitter {
         
         // simple-git 实例 
         this.git = simpleGit(this.git_base);
+        this.git.silent(false); 
         // 对实例进行 Promisify 
         simpleGitPromisify(
             this.git, 

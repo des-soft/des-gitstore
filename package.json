@@ -1,6 +1,6 @@
 {
   "name": "des-gitstore",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "des-soft git utils",
   "main": "src/Gitstore.js",
   "scripts": {
