@@ -1,0 +1,26 @@
+{
+  "name": "des-packer",
+  "version": "0.0.1",
+  "description": "packer",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/des-soft/packer.git"
+  },
+  "keywords": [
+    "packer"
+  ],
+  "author": "eczn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/des-soft/packer/issues"
+  },
+  "homepage": "https://github.com/des-soft/packer#readme",
+  "dependencies": {
+    "simple-git": "^1.92.0",
+    "then-fs": "^2.0.0"
+  }
+}
