@@ -13,6 +13,7 @@ module.exports = class Gitstore extends EventEmitter {
      * @description 构造函数
      * @param { String } git_base git 文件夹
      * @param { String } git_uri git uri 
+     * @param { Boolean } log init 的时候是否需要 log 
      */
     constructor(git_base, git_uri, log) {
         super(); 
