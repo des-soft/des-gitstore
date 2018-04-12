@@ -5,6 +5,7 @@ const { EventEmitter } = require('events')
     , rimraf = require('rimraf-then')
     , mkdir = require('./utils/mkdir')
     , pathPreset = require('./utils/pathPreset')
+
 // 依赖 
 
 module.exports = class Gitstore extends EventEmitter {
@@ -13,7 +14,7 @@ module.exports = class Gitstore extends EventEmitter {
      * @param { String } git_base git 文件夹
      * @param { String } git_uri git uri 
      */
-    constructor(git_base, git_uri) {
+    constructor(git_base, git_uri, log) {
         super(); 
         // git_uri: 
         // https://${user}:${pwd}@${git_path}
@@ -24,10 +25,11 @@ module.exports = class Gitstore extends EventEmitter {
         this.git_base = git_base; 
         this.git_uri  = git_uri; 
         mkdir(this.git_base); 
+
+        this.log = log; 
         
         // simple-git 实例 
         this.git = simpleGit(this.git_base);
-        this.git.silent(false); 
         // 对实例进行 Promisify 
         simpleGitPromisify(
             this.git, 
@@ -92,8 +94,15 @@ module.exports = class Gitstore extends EventEmitter {
      * @returns { Promise }
      */
     cloneRepo() {
+        if (this.log) this.git.outputHandler((cmd, stdout, stderr) => {
+            console.log('!!!', cmd); 
+            stdout.pipe(process.stdout);
+            stderr.pipe(process.stderr);
+        }); 
+
         return this.git.raw$([
             `clone`,
+            `--progress`, 
             this.git_uri,
             this.git_base 
         ]); 

@@ -6,8 +6,10 @@ let g = new Gitstore(
     // Git Base You Want To Set 
     '/www/des-soft/just-for-test', 
     // The Git URI
-    'https://alice:mypassword@coding.net/abc.git'
-    // or simple one: https://coding.net/abc.git  
+    'https://alice:mypassword@coding.net/abc.git', 
+    // or simple one: https://coding.net/abc.git 
+    true 
+    // wheather log msg when cloning a repo 
 ); 
 
 g.ready.then(init_ok => {
