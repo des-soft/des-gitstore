@@ -95,7 +95,6 @@ module.exports = class Gitstore extends EventEmitter {
      */
     cloneRepo() {
         if (this.log) this.git.outputHandler((cmd, stdout, stderr) => {
-            console.log('!!!', cmd); 
             stdout.pipe(process.stdout);
             stderr.pipe(process.stderr);
         }); 
